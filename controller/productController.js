@@ -12,7 +12,8 @@ module.exports.createProduct = async (req, res) => {
     console.log("Something went wrong: Controller: productController", error);
     response.status = 400;
     response.message = error.message;
-    response.body = {};
+    response.body = responseFromService;
   }
+  // Send full response object
   return res.status(response.status).send(response);
 };

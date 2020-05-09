@@ -6,7 +6,8 @@ module.exports.createProduct = async (serviceData) => {
   try {
     let product = new Product({ ...serviceData });
     // .save() method will instert the data into the model
-    return await product.save();
+    let result = await product.save();
+    return result;
   } catch (error) {
     console.log("Something went wrong: Service: createProduct", error);
     throw new Error(error);
