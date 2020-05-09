@@ -1,30 +1,30 @@
 const express = require("express");
 const dotEnv = require("dotenv");
 const cors = require("cors");
+const dbConnection = require("./database/connection");
 
 dotEnv.config();
 
 const app = express();
 
+// Database Connection
+dbConnection();
+
 // CORS allows for cross origin API calls
 app.use(cors());
 
-// Create Middleware
-const myMiddleware = (req, res, next) => {
-  console.log("Sample");
-  next();
-};
-
-// Request Payload Middleware
+// Request payload middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Routing
 app.get("/", (req, res, next) => {
   res.send("Hello World");
 });
 
 const PORT = process.env.PORT || 3000;
 
+// Listen for activity
 app.listen(PORT, () => {
   console.log(`Server listening at port ${PORT}`);
 });
