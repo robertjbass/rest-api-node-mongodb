@@ -1,0 +1,28 @@
+{
+  "name": "node-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "nodemon server.js",
+    "start": "npm server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/716green/node-api-mongodb.git"
+  },
+  "author": "Bob Bass",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/716green/node-api-mongodb/issues"
+  },
+  "homepage": "https://github.com/716green/node-api-mongodb#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.3"
+  }
+}
